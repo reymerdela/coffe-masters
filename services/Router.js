@@ -15,7 +15,7 @@ const Router = {
     this.go(location.pathname);
   },
   go: (route, addToHistory = true) => {
-    const basePath = "/coffee-masters";
+    const basePath = "/coffe-masters";
     console.log(route);
     if (route.startsWith(basePath)) {
       route = route.substring(basePath.length);
@@ -25,7 +25,6 @@ const Router = {
       history.pushState({ route }, "", route);
     }
     let pageElement = null;
-    console.log(route);
     switch (route) {
       case "/":
         pageElement = document.createElement("menu-page");
