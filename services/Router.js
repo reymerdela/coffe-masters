@@ -9,8 +9,6 @@ const Router = {
     });
 
     window.addEventListener("popstate", (event) => {
-      console.log(event);
-
       this.go(event.state.route, false);
     });
 
@@ -18,6 +16,7 @@ const Router = {
   },
   go: (route, addToHistory = true) => {
     const basePath = "/coffee-masters";
+    console.log(route);
     if (route.startsWith(basePath)) {
       route = route.substring(basePath.length);
     }
