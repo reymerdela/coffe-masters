@@ -15,6 +15,11 @@ const Router = {
     this.go(location.pathname);
   },
   go: (route, addToHistory = true) => {
+    const basePath = "/coffe-masters";
+    console.log(route);
+    if (route.startsWith(basePath)) {
+      route = route.substring(basePath.length);
+    }
     console.log(`Going to ${route}`);
     if (addToHistory) {
       history.pushState({ route }, "", route);
