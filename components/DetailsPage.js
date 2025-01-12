@@ -13,7 +13,7 @@ export class DetailsPage extends HTMLElement {
     this.root.appendChild(styles);
 
     async function loadCSS() {
-      const request = await fetch("/components/DetailsPage.css");
+      const request = await fetch("./DetailsPage.css");
       styles.textContent = await request.text();
     }
     loadCSS();
@@ -23,7 +23,9 @@ export class DetailsPage extends HTMLElement {
     if (this.dataset.id) {
       this.product = await getProductById(this.dataset.id);
       this.root.querySelector("h2").textContent = this.product.name;
-      this.root.querySelector("img").src = `/data/images/${this.product.image}`;
+      this.root.querySelector(
+        "img"
+      ).src = `../data/images/${this.product.image}`;
       this.root.querySelector(".description").textContent =
         this.product.description;
       this.root.querySelector(
