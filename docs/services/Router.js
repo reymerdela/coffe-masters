@@ -17,11 +17,16 @@ const Router = {
     this.go(location.pathname);
   },
   go: (route, addToHistory = true) => {
+    const basePath = "/coffee-masters";
+    if (route.startsWith(basePath)) {
+      route = route.substring(basePath.length);
+    }
     console.log(`Going to ${route}`);
     if (addToHistory) {
       history.pushState({ route }, "", route);
     }
     let pageElement = null;
+    console.log(route);
     switch (route) {
       case "/":
         pageElement = document.createElement("menu-page");
