@@ -1,4 +1,4 @@
-import { addToCart } from "/services/Order.js";
+import { addToCart } from "../services/Order.js";
 
 export default class ProductItem extends HTMLElement {
   constructor() {
